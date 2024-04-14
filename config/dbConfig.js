@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
-let dbConfig = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.cqzzq1r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+if (!process.env.API_URL || process.env.API_URL.trim() === '') {
+  console.error('A variável de ambiente API_URL não está definida.');
+  process.exit(1); 
+}
+
+const dbConfig = process.env.API_URL;
 
 mongoose.connect(dbConfig, {
   useNewUrlParser: true,
