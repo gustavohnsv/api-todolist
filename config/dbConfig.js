@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-if (!process.env.API_URL || process.env.API_URL.trim() === '') {
-  console.error('A variável de ambiente API_URL não está definida.');
+if (!process.env.MONGODB_URI || process.env.MONGODB_URI.trim() === '') {
+  console.error('A variável de ambiente MONGODB_URI não está definida.');
   process.exit(1); 
 }
 
-console.log(process.env.API_URL);
-const dbConfig = process.env.API_URL;
+console.log(process.env.MONGODB_URI);
+const dbConfig = process.env.MONGODB_URI;
 
 const connection = mongoose.connect(dbConfig, {
   useNewUrlParser: true,
