@@ -8,7 +8,7 @@ if (!process.env.API_URL || process.env.API_URL.trim() === '') {
 console.log(process.env.API_URL);
 const dbConfig = process.env.API_URL;
 
-mongoose.connect(dbConfig, {
+const connection = mongoose.connect(dbConfig, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -17,4 +17,4 @@ mongoose.connect(dbConfig, {
     console.error('Erro ao conectar ao banco de dados:', err);
   });
 
-module.exports = mongoose.connection;
+module.exports = connection;
