@@ -5,7 +5,12 @@ if (!process.env.API_URL || process.env.API_URL.trim() === '') {
   process.exit(1); 
 }
 
-const dbConfig = process.env.API_URL;
+const username = encodeURIComponent(process.env.USERNAME);
+const password = encodeURIComponent(process.env.PASSWORD);
+const cluster = process.env.CLUSTER;
+const authSource = process.env.authSOURCE;
+const authMechanism = process.env.authMECHANISM;
+let dbConfig =`mongodb+srv://${username}:${password}@${cluster}/?authSource=${authSource}&authMechanism=${authMechanism}`;
 
 mongoose.connect(dbConfig, {
   useNewUrlParser: true,
