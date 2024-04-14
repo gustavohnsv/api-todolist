@@ -5,7 +5,7 @@ if (!process.env.API_URL || process.env.API_URL.trim() === '') {
   process.exit(1); 
 }
 
-const dbConfig = process.env.API_URL
+const dbConfig = process.env.API_URL;
 
 mongoose.connect(dbConfig, {
   useNewUrlParser: true,
