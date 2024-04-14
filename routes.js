@@ -5,11 +5,6 @@ const todoListController = require('./controllers/todoListController');
 const priorityController = require('./controllers/priorityController');
 const contentController = require('./controllers/contentController');
 
-// Rota raiz
-routes.get('/', (req, res) => {
-    res.send('Bem-vindo à minha aplicação!');
-});
-
 // Rota todoList
 routes.get('/todolist', todoListController.read);
 routes.post('/todolist', todoListController.create);
@@ -21,5 +16,10 @@ routes.post('/priorities/:id', priorityController.update);
 
 // Rota Content
 routes.post('/contents/:id', contentController.update);
+
+// Rota raiz
+routes.get('/', (req, res) => {
+    res.send('Bem-vindo à minha aplicação!');
+});
 
 module.exports = routes;
