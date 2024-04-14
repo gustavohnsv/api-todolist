@@ -5,6 +5,7 @@ if (!process.env.API_URL || process.env.API_URL.trim() === '') {
   process.exit(1); 
 }
 
+console.log(process.env.API_URL);
 const dbConfig = process.env.API_URL;
 
 mongoose.connect(dbConfig, {
