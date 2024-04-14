@@ -7,10 +7,7 @@ if (!process.env.API_URL || process.env.API_URL.trim() === '') {
 
 const username = encodeURIComponent(process.env.USERNAME);
 const password = encodeURIComponent(process.env.PASSWORD);
-const cluster = process.env.CLUSTER;
-const authSource = process.env.authSOURCE;
-const authMechanism = process.env.authMECHANISM;
-let dbConfig =`mongodb+srv://${username}:${password}@${cluster}/?authSource=${authSource}&authMechanism=${authMechanism}`;
+let dbConfig = `mongodb+srv://<username>:<password>@cluster0.cqzzq1r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(dbConfig, {
   useNewUrlParser: true,
