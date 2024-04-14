@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const username = encodeURIComponent(process.env.USERNAME);
 const password = encodeURIComponent(process.env.PASSWORD);
-let dbConfig = `mongodb+srv://${username}:${password}}@cluster0.cqzzq1r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+let dbConfig = `mongodb+srv://${username}:${password}@cluster0.cqzzq1r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(dbConfig, {
   useNewUrlParser: true,
