@@ -5,13 +5,18 @@ const todoListController = require('./controllers/todoListController');
 const priorityController = require('./controllers/priorityController');
 const contentController = require('./controllers/contentController');
 
+// Rota raiz
+routes.get('/', (req, res) => {
+    res.send('Bem-vindo à minha aplicação!');
+});
+
 // Rota todoList
 routes.get('/todolist', todoListController.read);
 routes.post('/todolist', todoListController.create);
 routes.delete('/todolist/:id', todoListController.delete);
 
 // Rota Priority
-routes.get('/priorities', priorityController.read)
+routes.get('/priorities', priorityController.read);
 routes.post('/priorities/:id', priorityController.update);
 
 // Rota Content
